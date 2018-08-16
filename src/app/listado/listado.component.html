@@ -1,5 +1,6 @@
   <ul>
     <li *ngFor = "let ciudad of ciudades">
-      {{ciudad.name}}
+      <span>{{ciudad.name}}</span>
+      <span>{{ciudad.main.temp}} °C</span>
     </li>
   </ul>

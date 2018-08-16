@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Ciudades} from '../ciudades';
+import { ListaCiudadesService } from '../lista-ciudades.service'
 
 @Component({
   selector: 'app-listado',
@@ -9,7 +10,7 @@ import {Ciudades} from '../ciudades';
 })
 export class ListadoComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private listaCiudadesService : ListaCiudadesService ) { }
 
   ngOnInit() {
     this.getRegion();
@@ -19,7 +20,7 @@ export class ListadoComponent implements OnInit {
   ciudades: Ciudades[];
 
   getRegion(): void {
-    this.http.get<any>('https://api.openweathermap.org/data/2.5/box/city?bbox=-62,-31,-58,-33,100&appid=cc14f9a11b46364f749a8c5144bd67d6')
+    this.listaCiudadesService.getRegion()
       .subscribe(ciudades => {this.ciudades = ciudades.list});
   }
 
