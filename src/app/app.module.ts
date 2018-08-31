@@ -4,11 +4,13 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ListadoComponent } from './listado/listado.component';
+import { TriggersComponent } from './triggers/triggers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListadoComponent
+    ListadoComponent,
+    TriggersComponent
   ],
   imports: [
     BrowserModule,
