@@ -13,6 +13,6 @@ export class CiudadService {
   private key = 'cc14f9a11b46364f749a8c5144bd67d6';
 
   getCiudadById(id: number):Observable<any> {
-    return this.http.get(this.url+'?id='+id+'&appid='+this.key)
+    return this.http.get(this.url+'?id='+id+'&appid='+this.key+'&units=metric')
   }
 }

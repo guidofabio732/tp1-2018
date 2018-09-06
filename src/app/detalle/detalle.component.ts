@@ -12,9 +12,9 @@ export class DetalleComponent implements OnInit {
   constructor(private route: ActivatedRoute, private ciudadService: CiudadService) { }
   
   ciudad: any;
+  cent: number;
 
   ngOnInit() {
-    //this.id = this.route.snapshot.params.id;}
     this.getCiudadById();
   }
 
