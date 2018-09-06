@@ -1,8 +1,7 @@
   <ul>
-    <li *ngFor = "let ciudad of ciudades" (click)="onSelect(ciudad)" [class.selected]="ciudad === selectedCiudad">
-      <span>{{ciudad.name}}</span>
-      <span>{{ciudad.main.temp}} °C</span>
+    <li *ngFor = "let ciudad of ciudades">
+      <a routerLink="/detalles/{{ciudad.id}}">
+        <span>{{ciudad.name}}</span> {{ciudad.main.temp}}
+      </a>
     </li>
   </ul>
-
-  <!-- <app-detalle [ciudad] = "selectedCiudad"></app-detalle> -->

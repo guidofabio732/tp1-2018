@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Ciudades } from '../ciudades';
 import { ActivatedRoute } from '@angular/router';
+import { CiudadService} from '../ciudad.service';
 
 @Component({
   selector: 'app-detalle',
@@ -9,16 +9,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetalleComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
-
-  // @Input() ciudad: Ciudades;
+  constructor(private route: ActivatedRoute, private ciudadService: CiudadService) { }
   
-  id = 0;
+  ciudad: any;
 
   ngOnInit() {
-    this.id = this.route.snapshot.params.id;
+    //this.id = this.route.snapshot.params.id;}
+    this.getCiudadById();
   }
 
-  
+  getCiudadById(): void{
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.ciudadService.getCiudadById(id)
+      .subscribe(ciudad => this.ciudad = ciudad);
+  }
 
 }

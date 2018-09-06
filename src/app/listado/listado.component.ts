@@ -18,15 +18,10 @@ export class ListadoComponent implements OnInit {
 
   ciudad: Ciudades;
   ciudades: Ciudades[];
-  selectedCiudad: Ciudades;
 
   getRegion(): void {
     this.listaCiudadesService.getRegion()
       .subscribe(ciudades => {this.ciudades = ciudades.list});
-  }
-
-  onSelect(ciudad: Ciudades): void{
-    this.selectedCiudad = ciudad;
   }
 
 
