@@ -1,6 +1,8 @@
   <ul>
-    <li *ngFor = "let ciudad of ciudades">
+    <li *ngFor = "let ciudad of ciudades" (click)="onSelect(ciudad)" [class.selected]="ciudad === selectedCiudad">
       <span>{{ciudad.name}}</span>
       <span>{{ciudad.main.temp}} °C</span>
     </li>
   </ul>
+
+  <!-- <app-detalle [ciudad] = "selectedCiudad"></app-detalle> -->

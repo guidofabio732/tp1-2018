@@ -14,4 +14,5 @@ export class ListaCiudadesService {
   getRegion(): Observable<any>{
     return this.http.get(this.baseUrl)
   }
+  
 }
