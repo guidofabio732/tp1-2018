@@ -1,7 +1,7 @@
 ## Integrantes
 
-#Franco Paoloni
-#Guido Fabio
-#Juan Rueda
+# Franco Paoloni
+# Guido Fabio
+# Juan Rueda
 
 
