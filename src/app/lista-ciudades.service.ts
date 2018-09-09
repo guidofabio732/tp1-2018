@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -18,4 +18,7 @@ export class ListaCiudadesService {
   getCiudad(cityName): Observable<any>{
     return this.http.get("http://api.openweathermap.org/data/2.5/weather?APPID=6a59f8548d84c2a6c72ca74a1a27f0ed&q="+ cityName)
   }
+
+  
+
 }

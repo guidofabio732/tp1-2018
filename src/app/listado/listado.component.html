@@ -1,6 +1,7 @@
   <ul>
     <li *ngFor = "let ciudad of ciudades">
-      <span>{{ciudad.name}}</span>
-      <span>{{ciudad.main.temp}} °C</span>
+      <a routerLink="/detalles/{{ciudad.id}}">
+        <span>{{ciudad.name}}</span> {{ciudad.main.temp}}
+      </a>
     </li>
   </ul>
