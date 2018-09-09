@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ListadoComponent } from './listado/listado.component';
 import { BuscadorComponent } from './buscador/buscador.component';
-
 import { DetalleComponent } from './detalle/detalle.component';
 import { AppRoutingModule } from './/app-routing.module';
 
