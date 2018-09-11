@@ -13,11 +13,11 @@ import {ListaCiudadesService} from '../lista-ciudades.service';
 export class BuscadorComponent {
 
   constructor(private listaCiudadesService : ListaCiudadesService) { }
-  ciudad: Ciudades;
+  ciudad: any;
   cityName = '';
   searchCity(): void{
     this.listaCiudadesService.getCiudad(this.cityName)
-    .subscribe(ciudad => this.ciudad.name = ciudad.name)
+    .subscribe(ciudad => this.ciudad = ciudad)
 }
 
 }
