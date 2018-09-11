@@ -23,5 +23,8 @@ export class DetalleComponent implements OnInit {
     this.ciudadService.getCiudadById(id)
       .subscribe(ciudad => this.ciudad = ciudad);
   }
+  
+  keyGM = 'AIzaSyAuU6--SUseFuOGBypltP9rremIv1Yh1TI'
+  //GM es google maps
 
 }
