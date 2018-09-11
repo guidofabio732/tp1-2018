@@ -7,13 +7,15 @@ import { ListadoComponent } from './listado/listado.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { DetalleComponent } from './detalle/detalle.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoComponent,
     BuscadorComponent,
-    DetalleComponent
+    DetalleComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
