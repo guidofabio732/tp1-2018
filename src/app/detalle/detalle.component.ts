@@ -12,9 +12,9 @@ export class DetalleComponent implements OnInit {
   constructor(private route: ActivatedRoute, private ciudadService: CiudadService) { }
   
   ciudad: any;
+  cent: number;
 
   ngOnInit() {
-    //this.id = this.route.snapshot.params.id;}
     this.getCiudadById();
   }
 
@@ -23,5 +23,8 @@ export class DetalleComponent implements OnInit {
     this.ciudadService.getCiudadById(id)
       .subscribe(ciudad => this.ciudad = ciudad);
   }
+  
+  keyGM = 'AIzaSyAuU6--SUseFuOGBypltP9rremIv1Yh1TI'
+  //GM es google maps
 
 }

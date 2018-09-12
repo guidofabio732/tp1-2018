@@ -1,0 +1,42 @@
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#">Clima</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Esto</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">no</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">?</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="#">lo</a>
+          <a class="dropdown-item" href="#">usamos</a>
+          <a class="dropdown-item" href="#">?</a>
+        </div>
+      </li>
+    </ul>
+    <div class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" [(ngModel)]=cityName placeholder="Buscar.." aria-label="Buscar">
+      <button class="btn btn-outline-success my-2 my-sm-0" (click)=searchCity()>Buscar</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+<div *ngIf = "ciudad">
+  <h2>{{ciudad.name}}</h2>
+  <h3>{{ciudad.main.temp}}</h3>
+  <p>{{ciudad.weather[0].description}}</p>
+  <hr>
+</div>
+</div>

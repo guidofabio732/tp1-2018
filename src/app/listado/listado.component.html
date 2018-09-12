@@ -1,7 +1,15 @@
-  <ul>
-    <li *ngFor = "let ciudad of ciudades">
-      <a routerLink="/detalles/{{ciudad.id}}">
-        <span>{{ciudad.name}}</span> {{ciudad.main.temp}}
-      </a>
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <ul class="row text-center">
+    <li *ngFor = "let ciudad of ciudades" class="card mb-4 shadow-sm col-md-4">
+      <h2>{{ciudad.name}}</h2>
+      <h3>{{ciudad.main.temp}} °C </h3>
+      <img class="image" src="assets/images/sun.jpg" alt="Sol">
+      <!-- Aca iria la imagen del sol o nube posta -->
+      <p>Humedad: {{ciudad.main.humidity}} %</p>
+      <p>Temperatura máxima: {{ciudad.main.temp_max}}</p>
+      <p>Temperatura mínima: {{ciudad.main.temp_min}}</p>
+      <p><a class="btn btn-secondary" routerLink="/detalles/{{ciudad.id}}" role="button">Detalles &raquo;</a></p>
     </li>
-  </ul>
+  </ul> 
+</div>
