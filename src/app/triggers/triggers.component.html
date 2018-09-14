@@ -1,74 +1,36 @@
-<h2>Alertas</h2>
+<app-navbar></app-navbar>
 
-<h3>Estas son sus alertas: </h3>
-
-<ul>
-    <li>
+<div class="container">
+    <h1>Alertas</h1>
+    <h2>Estas son sus alertas: </h2>
+    <ol>
+      <li *ngFor = "let trigger of triggers">
+        {{trigger._id}}
+      </li>
+    </ol>
+    <h2>Crear una nueva alerta</h2>
+  <form (ngSubmit)="onSubmit()" #triggerForm="ngForm">
+    <div class="form-group">
+      <label for="inicio" class="bmd-label-floating">Tiempo Inicio</label>
+      <input type="number" class="form-control" id="inicio" placeholder="Tiempo Inicio" 
+      [(ngModel)]="model.time_period.start.amount" name="inicio" required>
+      <label for="fin">Tiempo Fin</label>
+      <input type="number" class="form-control" id="fin" placeholder="Tiempo fin" 
+      [(ngModel)]="model.time_period.end.amount" name="fin" required>
+    </div>
+    <div class="form-group">
+      <label for="temperatura">Temperatura</label>
+      <input type="number" class="form-control" id="temperatura" placeholder="Temperatura"
+       [(ngModel)]="model.conditions[0].amount" name="temperatura" required>
+    </div>
+    <div class="form-group">
+      <label for="coordenadas">Coordenadas</label>
+      <input type="number" class="form-control" id="lat" placeholder="Latitud" 
+      [(ngModel)]="model.area[0].coordinates[0]" name="lat" required>
+      <input type="number" class="form-control" id="long" placeholder="Longitud" 
+      [(ngModel)]="model.area[0].coordinates[1]" name="long" required>  
+    </div>
   
-    </li>
-  </ul>
-
-<h3>Crear una nueva alerta</h3>
-
-<form action="" method="POST">
-  <fieldset>
-    <legend>Período de tiempo</legend>
-    <p>Inicio</p>
-      <label for="start-expression">Expresión:</label>
-      <select name="start-expression">
-        <option value="exact">Excact</option>
-        <option value="after">After</option>
-        <option value="before">Before</option>
-      </select>
-      <br>
-      <label for="amount">Cantidad: </label>
-      <input type="text" id="amount">
-    <p>Fin</p>
-      <label for="end-expression">Expresión:</label>
-      <select name="end-expression">
-        <option value="exact">Excact</option>
-        <option value="after">After</option>
-        <option value="before">Before</option>
-      </select>
-      <br>
-      <label for="amount">Cantidad: </label>
-      <input type="text" id="amount">
-  </fieldset>
-
-  <fieldset>
-      <legend>Condiciones</legend>
-      <label for="conditions-name">Nombre:</label>
-      <select name="conditions-name">
-          <option value="temp">Temperatura</option>
-          <option value="pressure">Presión</option>
-          <option value="humidity">Humedad</option>
-          <option value="wind_speed">Vel. Viento</option>
-          <option value="wind-direction">Dir. Viento</option>
-          <option value="clouds">Nubes</option>
-        </select>
-      <br>
-      <label for="expression">Expresión:</label>
-      <input type="text" id="expression" placeholder="$gt" readonly>
-      <br>
-      <label for="amount">Cantidad: </label>
-      <input type="text" id="amount">
-  </fieldset>
-  <br>
-  <fieldset>
-      <legend>Área</legend>
-      <label for="type">Tipo:</label>
-      <select name="type">
-        <option value="Point">Point</option>
-        <option value="MultiPoint">MultiPoint</option>
-        <option value="Polygon">Polygon</option>
-        <option value="MultiPolygon">MultiPolygon</option>
-      </select>
-      <br>
-      <label for="coordinates">Coordenadas: </label>
-      <br>
-      <span>
-          <input type="text" id="coordinates">
-          <input type="text" id="coordinates">
-      </span>
-  </fieldset>
-</form>
+    <button type="submit" class="btn btn-success" [disabled]="!triggerForm.form.valid" (click)="addTrigger(); triggerForm.reset()" >Agregar alerta </button>
+  </form>
+</div>
