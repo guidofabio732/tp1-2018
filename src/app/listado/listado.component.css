@@ -1,4 +1,10 @@
+h1{
+    margin-top: 80px;
+    margin-bottom: 10px;
+    font-family: roboto-condensed;
+}
 h2{
+    padding-top: 40px;
     font-family: Merriweather; 
     font-size: 30px;font-style: normal; 
     font-variant: normal; 
@@ -11,10 +17,18 @@ p{
     font-variant: normal; 
     font-weight: 700; 
     line-height: 26.4px; }
+    
 .image{
     width:100px; 
     height: 100px;
     align-self: center;
 }
 
-    
+.mapa{
+    box-align: right;
+    align-self: right;
+}
+
+.container-fluid{
+    margin-top: 0px;
+}   

@@ -29,9 +29,25 @@
   </form>
   
     <h2>Estas son sus alertas: </h2>
-    <ol>
-      <li *ngFor = "let trigger of triggers">
-        {{trigger._id}}
-      </li>
-    </ol>
+
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>#</th>
+            <th scope="col">Inicio</th>
+            <th scope="col">Fin</th>
+            <th scope="col">Temperatura</th>
+            <th scope="col">Area (latitud, longitud)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let trigger of triggers">
+            <th scope="row">{{triggers.indexOf(trigger)+1}}</th>
+            <td>{{trigger.time_period.start.amount/1000}} seg</td>
+            <td>{{trigger.time_period.end.amount/1000}} seg</td>
+            <td>{{trigger.conditions[0].amount - 273.15 | number : '1.2-2'}} °C</td>
+            <td>{{trigger.area[0].coordinates[0]}} ; {{trigger.area[0].coordinates[0]}}</td>
+          </tr>
+        </tbody>
+      </table>
 </div>
