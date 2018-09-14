@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ListaCiudadesService} from '../lista-ciudades.service';
+import { CiudadService } from '../ciudad.service';
+
 
 @Component({
   selector: 'app-navbar',
@@ -7,13 +8,17 @@ import {ListaCiudadesService} from '../lista-ciudades.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-
-  constructor(private listaCiudadesService : ListaCiudadesService) { }
+  value = '';
+  constructor(private ciudadService : CiudadService) { }
   ciudad: any;
   cityName = '';
   searchCity(): void{
-    this.listaCiudadesService.getCiudad(this.cityName)
+    this.ciudadService.getCiudad(this.cityName)
     .subscribe(ciudad => this.ciudad = ciudad)
+  }
+  onEnter(value: string) {
+    this.value =  value;
+    this.searchCity();
   }
 
 }

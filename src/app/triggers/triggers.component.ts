@@ -23,26 +23,26 @@ export class TriggersComponent implements OnInit {
       time_period: {
         start: {
           expression: "after",
-          amount: 12125454
+          amount: null
         },
         end:{
           expression: "after",
-          amount: 1212
+          amount: null
         }
       },
       conditions:[
         {
         name: "temp",
         expression: "$gt",
-        amount: 2323
+        amount: null
         }
       ],
       area: [
         {
           type: "Point",
           coordinates: [
-            53,
-            37
+            null,
+            null
           ]
         }
       ]

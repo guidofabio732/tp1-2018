@@ -18,5 +18,8 @@ export class CiudadService {
   getCiudadById(id: number):Observable<any> {
     return this.http.get(this.url+'?id='+id+'&appid='+this.key+'&units=metric')
   }
+  getCiudad(cityName): Observable<any>{
+    return this.http.get("http://api.openweathermap.org/data/2.5/weather?APPID="+this.key+"&q="+ cityName+'&units=metric&lang=es')
+  }
   
 }

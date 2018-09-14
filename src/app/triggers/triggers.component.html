@@ -1,13 +1,7 @@
 <app-navbar></app-navbar>
 
 <div class="container">
-    <h1>Alertas</h1>
-    <h2>Estas son sus alertas: </h2>
-    <ol>
-      <li *ngFor = "let trigger of triggers">
-        {{trigger._id}}
-      </li>
-    </ol>
+  <h1>Alertas</h1>
     <h2>Crear una nueva alerta</h2>
   <form (ngSubmit)="onSubmit()" #triggerForm="ngForm">
     <div class="form-group">
@@ -33,4 +27,11 @@
   
     <button type="submit" class="btn btn-success" [disabled]="!triggerForm.form.valid" (click)="addTrigger(); triggerForm.reset()" >Agregar alerta </button>
   </form>
+  
+    <h2>Estas son sus alertas: </h2>
+    <ol>
+      <li *ngFor = "let trigger of triggers">
+        {{trigger._id}}
+      </li>
+    </ol>
 </div>
