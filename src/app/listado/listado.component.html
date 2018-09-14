@@ -2,7 +2,7 @@
 <h1 class="text-center">El clima en tu región</h1>
 <div class="container-fluid">
   <ul class="row text-center">
-    <li *ngFor = "let ciudad of ciudades" class="card mb-3 shadow-sm col-md-4 text-white bg-dark">
+    <li *ngFor = "let ciudad of ciudades" class="card mb-3 shadow p-3 col-md-3 text-white bg-dark">
       <h2>{{ciudad.name}}</h2>
       <h3>{{ciudad.main.temp}} °C </h3>
       <img class="image" src="http://openweathermap.org/img/w/{{ciudad.weather[0].icon}}.png" alt="Icono">      
