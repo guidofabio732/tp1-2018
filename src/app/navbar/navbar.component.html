@@ -17,22 +17,21 @@
      
     </ul>
     <div class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" #box (keyup.enter)="onEnter(box.value)" [(ngModel)]=cityName placeholder="Buscar.." aria-label="Buscar">
-      <button class="btn btn-outline-success my-2 my-sm-0"  (click)=searchCity()>Buscar</button>
+      <input class="form-control mr-sm-2" type="text" #box (keyup.enter)="onEnter(box.value)" [(ngModel)]=cityName placeholder="Buscar.. (Ciudad, Pais)" aria-label="Buscar">
     </div>
   </div>
 </nav>
 
-<div *ngIf="ciudad" class="container-fluid content-center">
-  <ul class="row text-center">
-   <li>
-      <h2>{{ciudad.name}}</h2>
+<div *ngIf="ciudad" class="container-fluid">
+  <ul class="row text-center justify-content-center">
+   <li class="card mb-3 shadow p-3 col-md-3 text-white bg-dark">
+      <h2>{{ciudad.name}}, {{ciudad.sys.country}}</h2>
       <h3>{{ciudad.main.temp}} °C </h3>
       <img class="image" src="http://openweathermap.org/img/w/{{ciudad.weather[0].icon}}.png" alt="Icono">      
       <p>Humedad: {{ciudad.main.humidity}} %</p>
       <p>Temperatura máxima: {{ciudad.main.temp_max}}</p>
       <p>Temperatura mínima: {{ciudad.main.temp_min}}</p>
-      <p><a class="btn btn-secondary" routerLink="/detalles/{{ciudad.id}}" role="button">Detalles &raquo;</a></p>
+      <p><a class="btn btn-secondary" href="/detalles/{{ciudad.id}}" role="button">Detalles &raquo;</a></p>
     </li>
   </ul> 
 </div>

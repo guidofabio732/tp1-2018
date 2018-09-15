@@ -1,20 +1,27 @@
 <app-navbar></app-navbar>
 <div *ngIf = "ciudad" class="container">
   <div class="row">
-    <div class="col-md-4">
-      <h2>{{ciudad.name}}</h2>
-      <h3>{{ciudad.main.temp}} °C</h3>
-      <p class ="desc">{{ciudad.weather[0].description}}</p>
-      <p>Humedad: {{ciudad.main.humidity}} %</p>
-      <p>Presión atmosférica: {{ciudad.main.pressure}} mbar</p>
-      <p>Viento: {{ciudad.wind.speed}} km/h</p>
-      <p></p>
-    <div class="col-md-4">
-        <img class="image" src="http://openweathermap.org/img/w/{{ciudad.weather[0].icon}}.png" alt="Icono">
-    </div>
-    </div>
-    <div class="col-md-4">
-      <img class="mapa" src="https://maps.googleapis.com/maps/api/staticmap?center={{ciudad.coord.lat}},{{ciudad.coord.lon}}&zoom=12&size=400x400&key={{keyGM}}" alt="{{ciudad.name}} map">
-    </div>
-  </div>  
+      <div class="col-md-5">
+        <h1>{{ciudad.name}}, {{ciudad.sys.country}}</h1>
+        <br>
+        <img class="rounded float-left" src="http://openweathermap.org/img/w/{{ciudad.weather[0].icon}}.png" alt="Icono">
+        <h2 class="display-2">{{ciudad.main.temp}} °C</h2>
+        <p class ="desc">{{ciudad.weather[0].description}}</p>
+        <hr>
+        <p>Temperatura máxima: {{ciudad.main.temp_max}}</p>
+        <p>Temperatura mínima: {{ciudad.main.temp_min}}</p>
+        <hr>
+        <p>Humedad: {{ciudad.main.humidity}} %</p>
+        <hr>
+        <p>Presión atmosférica: {{ciudad.main.pressure}} hPa</p>
+        <hr>
+        <p>Viento: {{ciudad.wind.speed}} m/s</p>
+        <hr>
+        <p *ngIf = "ciudad.visibility">Visibilidad: {{ciudad.visibility}} m</p>
+      </div>
+      <div class="col-md-6">
+        <img class="rounded float-right img-thumbnail" src="https://maps.googleapis.com/maps/api/staticmap?center={{ciudad.coord.lat}},{{ciudad.coord.lon}}&zoom=12&size=400x400&key={{keyGM}}" alt="{{ciudad.name}} map">
+      </div>
+
+  </div>
 </div>

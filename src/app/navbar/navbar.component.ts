@@ -12,6 +12,7 @@ export class NavbarComponent {
   constructor(private ciudadService : CiudadService) { }
   ciudad: any;
   cityName = '';
+  
   searchCity(): void{
     this.ciudadService.getCiudad(this.cityName)
     .subscribe(ciudad => this.ciudad = ciudad)
